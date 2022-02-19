@@ -7,13 +7,9 @@ MOVE_INCREMENT = 10
 all_cars = []
 
 
-class CarManager(Turtle):
-    """Spawn Car at random location"""
-    def __init__(self):
-        super().__init__()
-
-
+class CarManager:
     def spawn_new_car(self):
+        """Spawn Car at random location"""
         new_car = Turtle("square")
         new_car.penup()
         new_car.shapesize(1, 2)
@@ -26,13 +22,9 @@ class CarManager(Turtle):
         all_cars.append(new_car)
         return new_car
 
-
     def move_cars_left(self, car):
         """move car to the left. and respawn on the right if offscreen"""
         car.forward(STARTING_MOVE_DISTANCE)
         if car.xcor() < -320:
             car.setx(320)
 
-    # def check_player_collision(self, player_position):
-    #     if self.distance(player_position) < 50:
-    #         print("Death")
