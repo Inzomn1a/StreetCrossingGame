@@ -9,6 +9,7 @@ class Scoreboard:
         super().__init__()
         self.scoreboard = Turtle()
         self.scoreboard.penup()
+        self.scoreboard.color("white")
         self.scoreboard.goto(-250, 270)
         self.scoreboard.hideturtle()
         self.scoreboard.write(f"Level: {player_score}", align="center", font=("Arial", 25, "normal"))

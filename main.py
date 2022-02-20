@@ -9,13 +9,13 @@ player_score = 0
 screen = Screen()
 screen.tracer(0)
 scoreboard = Scoreboard(player_score)
-screen.bgcolor("grey")
+screen.bgcolor("darkgrey")
 player = Player()
 cars_manager = CarManager()
 screen.setup(width=600, height=600)
 screen.listen()
 
-car_spawn_amount = 14
+car_spawn_amount = 12
 car_start_speed = 0
 car_speed_increment = 5
 car_spawn_counter = 0
@@ -27,6 +27,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
     if car_spawn_counter < car_spawn_amount:  # THIS GETS SKIPPED ONCE CARS ARE SPAWNED
+        turtle.color("white")
         turtle.write("Standby.\nBuilding world", align="center", font=("Arial", 25, "normal"))
         turtle.hideturtle()
         all_cars.append(cars_manager.spawn_new_car())
